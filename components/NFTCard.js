@@ -2,6 +2,7 @@ import { View, Image , Text} from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import {COLORS,SIZES,SHADOWS,assets} from '../constants'
 import { CricleButton } from './Button'
+import {NFTTitle,EthPrice, SubInfo} from './Subinfo'
 
 
 const NFTCard = ({data}) => {
@@ -28,6 +29,22 @@ const NFTCard = ({data}) => {
           }}
           />
           <CricleButton imgUrl={assets.heart} right={10} top={10} handlePress={handlePress} />
+        </View>
+
+        <SubInfo  />
+        <View 
+        style={{
+            width:"100%",
+            padding:SIZES.font
+        }}
+        >
+            <NFTTitle 
+
+            title={data.name}
+            subTitle={data.creator}
+            titleSize={SIZES.large}
+            subTitleSize={SIZES.small}
+             />
         </View>
     </View>
   )
