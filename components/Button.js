@@ -1,6 +1,6 @@
 import { View, Text , TouchableOpacity,Image} from 'react-native'
 import React from 'react'
-import { COLORS, SHADOWS, SIZES } from '../constants'
+import { COLORS, FONTS, SHADOWS, SIZES } from '../constants'
 
 export const CricleButton = ({imgUrl,handlePress,...props}) => {
 
@@ -29,11 +29,29 @@ export const CricleButton = ({imgUrl,handlePress,...props}) => {
   )
 }
 
-export const RectButton = () => {
+export const RectButton = ({minWidth,fontSize,handlePress,...props}) => {
     return (
-      <View>
-        <Text>Button</Text>
-      </View>
+        <TouchableOpacity
+        style={{
+            backgroundColor:COLORS.primary,
+            borderRadius:SIZES.extraLarge,
+            minWidth:minWidth,
+            padding:SIZES.small,
+            ...props
+        }}
+        onPress={handlePress}
+        >
+            <Text
+            style={{
+                fontFamily:FONTS.semiBold,
+                fontSize:fontSize,
+                color:COLORS.white,
+                textAlign:"center"
+            }}
+            >
+                Place a bids
+            </Text>
+        </TouchableOpacity>
     )
   }
   

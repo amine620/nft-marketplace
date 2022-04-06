@@ -1,7 +1,7 @@
 import { View, Image , Text} from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import {COLORS,SIZES,SHADOWS,assets} from '../constants'
-import { CricleButton } from './Button'
+import { CricleButton ,RectButton} from './Button'
 import {NFTTitle,EthPrice, SubInfo} from './Subinfo'
 
 
@@ -45,6 +45,19 @@ const NFTCard = ({data}) => {
             titleSize={SIZES.large}
             subTitleSize={SIZES.small}
              />
+             <View style={{
+                 marginTop:SIZES.font,
+                 flexDirection:"row",
+                 justifyContent:"space-between",
+                 alignItems:"center",
+             }}>
+              <EthPrice price={data.price} />
+              <RectButton 
+              minWidth={120}
+              fontSize={SIZES.font}
+              handlePress={()=>{navigation.navigate('Details',{data})}}
+              />
+             </View>
         </View>
     </View>
   )
