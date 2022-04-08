@@ -28,7 +28,7 @@ const NFTCard = ({data}) => {
               borderTopRightRadius:SIZES.font
           }}
           />
-          <CricleButton imgUrl={assets.heart} right={10} top={10} handlePress={handlePress} />
+          <CricleButton imgUrl={assets.heart} right={10} top={10}  />
         </View>
 
         <SubInfo  />
@@ -52,11 +52,11 @@ const NFTCard = ({data}) => {
                  alignItems:"center",
              }}>
               <EthPrice price={data.price} />
-              <RectButton 
-              minWidth={120}
-              fontSize={SIZES.font}
-              handlePress={()=>{navigation.navigate('Details',{data})}}
-              />
+              <RectButton
+            minWidth={120}
+            fontSize={SIZES.font}
+            handlePress={() => navigation.navigate("Details", { data })}
+          />
              </View>
         </View>
     </View>
