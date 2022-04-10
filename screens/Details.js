@@ -1,12 +1,12 @@
 import {View,Text,SafeAreaView,Image,StatusBar,FlatList} from "react-native"
 import {RectButton , SubInfo , FocusedStatusBar , DetailsDesc , DetailsBid, CricleButton} from "../components"
-import { SHADOWS, SIZES } from "../constants"
+import { assets, COLORS, FONTS, SHADOWS, SIZES } from "../constants"
 
 
 
 
 const DetailsHeader=({data,navigation})=>(
-  
+
   <View style={{
     width:"100%",
     height:373,
@@ -21,6 +21,15 @@ const DetailsHeader=({data,navigation})=>(
     />
     <CricleButton 
        imgUrl={assets.left}
+       handlePress={()=>navigation.goBack()}
+       left={15}
+       top={StatusBar.currentHeight+10}
+    />
+
+<CricleButton 
+       imgUrl={assets.heart}
+       right={15}
+       top={StatusBar.currentHeight+10}
     />
   </View>
 )
@@ -65,6 +74,23 @@ const Details=({route,navigation})=> {
             data={data}
             navigation={navigation}
            />
+           <SubInfo />
+           <View style={{
+             padding:SIZES.font,
+           }}>
+            <DetailsDesc
+               data={data}
+             />
+             {data.bids.length > 0 && (
+               <Text style={{
+                 fontSize:SIZES.font,
+                 fontFamily:FONTS.semiBold,
+                 color:COLORS.primary
+               }}>
+                 Current Bid
+               </Text>
+             )}
+           </View>
          </>
        )}
         />
