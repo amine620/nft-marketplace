@@ -9,7 +9,9 @@ const DetailsBid = ({bid}) => {
       width:"100%",
       flexDirection:"row",
       justifyContent:"space-between",
-      alignItems:"center"
+      alignItems:"center",
+      marginVertical:SIZES.base,
+      paddingHorizontal:SIZES.base*2
     }}>
      <Image
      source={bid.image}
@@ -23,7 +25,7 @@ const DetailsBid = ({bid}) => {
         <Text style={{
           fontFamily:FONTS.semiBold,
           fontSize:SIZES.small,
-          color:COLORS.primary
+          color:COLORS.primary,
         }}>
           Bid Placed by {bid.name}
         </Text>
